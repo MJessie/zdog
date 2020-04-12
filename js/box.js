@@ -38,13 +38,13 @@ var boxDefaults = utils.extend( {}, Shape.defaults );
 delete boxDefaults.path;
 faceNames.forEach( function( faceName ) {
   boxDefaults[ faceName ] = true;
-});
+} );
 utils.extend( boxDefaults, {
   width: 1,
   height: 1,
   depth: 1,
   fill: true,
-});
+} );
 
 var Box = Anchor.subclass( boxDefaults );
 
@@ -72,8 +72,8 @@ faceNames.forEach( function( faceName ) {
       this[ _faceName ] = value;
       this.setFace( faceName, value );
     },
-  });
-});
+  } );
+} );
 
 Box.prototype.setFace = function( faceName, value ) {
   var rectProperty = faceName + 'Rect';
@@ -103,36 +103,36 @@ Box.prototype.getFaceOptions = function( faceName ) {
     frontFace: {
       width: this.width,
       height: this.height,
-      translate: { z: this.depth/2 },
+      translate: { z: this.depth / 2 },
     },
     rearFace: {
       width: this.width,
       height: this.height,
-      translate: { z: -this.depth/2 },
+      translate: { z: -this.depth / 2 },
       rotate: { y: TAU/2 },
     },
     leftFace: {
       width: this.depth,
       height: this.height,
-      translate: { x: -this.width/2 },
+      translate: { x: -this.width / 2 },
       rotate: { y: -TAU/4 },
     },
     rightFace: {
       width: this.depth,
       height: this.height,
-      translate: { x: this.width/2 },
+      translate: { x: this.width / 2 },
       rotate: { y: TAU/4 },
     },
     topFace: {
       width: this.width,
       height: this.depth,
-      translate: { y: -this.height/2 },
+      translate: { y: -this.height / 2 },
       rotate: { x: -TAU/4 },
     },
     bottomFace: {
       width: this.width,
       height: this.depth,
-      translate: { y: this.height/2 },
+      translate: { y: this.height / 2 },
       rotate: { x: TAU/4 },
     },
   }[ faceName ];
@@ -160,9 +160,9 @@ childProperties.forEach( function( property ) {
         }
       }, this );
     },
-  });
-});
+  } );
+} );
 
 return Box;
 
-}));
+} ) );
